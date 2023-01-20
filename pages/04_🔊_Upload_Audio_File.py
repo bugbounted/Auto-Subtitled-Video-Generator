@@ -15,7 +15,7 @@ from io import BytesIO
 import base64
 import re
 
-st.set_page_config(page_title="Auto Transcriber", page_icon="🔊", layout="wide")
+st.set_page_config(page_title="رونویس خودکار", page_icon="🔊", layout="wide")
 
 torch.cuda.is_available()
 DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
@@ -45,10 +45,10 @@ with col1:
 
 with col2:
     st.write("""
-    ## Auto Transcriber
-    ##### Input an audio file and get a transcript.
-    ###### ➠ If you want to transcribe the audio in its original language, select the task as "Transcribe"
-    ###### ➠ If you want to translate the transcription to English, select the task as "Translate" """)
+## رونویس خودکار
+     ##### یک فایل صوتی وارد کنید و رونوشت بگیرید.
+     ###### ➠ اگر می خواهید صدا را به زبان اصلی آن رونویسی کنید، کار را به عنوان "Transcribe" انتخاب کنید.
+     ###### ➠ اگر می خواهید رونویسی را به انگلیسی ترجمه کنید، کار را به عنوان "Translate" انتخاب کنید. """)
 
 
 def inferecence(loaded_model, uploaded_file, task):
