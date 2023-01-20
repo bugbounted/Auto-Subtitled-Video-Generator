@@ -12,7 +12,7 @@ from zipfile import ZipFile
 from io import BytesIO
 import base64
 
-st.set_page_config(page_title="Auto Subtitled Video Generator", page_icon=":movie_camera:", layout="wide")
+st.set_page_config(page_title="تولید کننده ویدیو زیرنویس خودکار", page_icon=":movie_camera:", layout="wide")
 
 # Define a function that we can use to load lottie files from a link.
 @st.cache(allow_output_mutation=True)
@@ -38,9 +38,9 @@ with col1:
 
 with col2:
     st.write("""
-    ## Auto Subtitled Video Generator 
-    ##### ➠ Upload a video file and a transcript as .srt or .vtt file and get a video with subtitles.
-    ##### ➠ Processing time will increase as the video length increases. """)
+## تولید کننده ویدئو زیرنویس خودکار
+     ##### ➠ یک فایل ویدیویی و یک رونوشت را به صورت فایل .srt یا .vtt آپلود کنید و یک ویدیو با زیرنویس دریافت کنید.
+     ##### ➠ با افزایش طول ویدئو، زمان پردازش افزایش خواهد یافت.""")
 
 
 def getSubs(segments: Iterator[dict], format: str, maxLineWidth: int) -> str:
