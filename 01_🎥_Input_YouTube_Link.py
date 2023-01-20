@@ -18,7 +18,7 @@ import base64
 import pathlib
 import re
 
-st.set_page_config(page_title="Auto Subtitled Video Generator", page_icon=":movie_camera:", layout="wide")
+st.set_page_config(page_title="تولید کننده ویدیو زیرنویس خودکار", page_icon=":movie_camera:", layout="wide")
 
 torch.cuda.is_available()
 DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
@@ -51,11 +51,11 @@ with col1:
 
 with col2:
     st.write("""
-    ## Auto Subtitled Video Generator 
-    ##### Input a YouTube video link and get a video with subtitles.
-    ###### ➠ If you want to transcribe the video in its original language, select the task as "Transcribe"
-    ###### ➠ If you want to translate the subtitles to English, select the task as "Translate" 
-    ###### I recommend starting with the base model and then experimenting with the larger models, the small and medium models often work well. """)
+## تولید کننده ویدئو زیرنویس خودکار
+     ##### یک لینک ویدیوی YouTube وارد کنید و یک ویدیو با زیرنویس دریافت کنید.
+     ###### ➠ اگر می‌خواهید ویدیو را به زبان اصلی آن رونویسی کنید، کار را به عنوان «Transcribe» انتخاب کنید.
+     ###### ➠ اگر می خواهید زیرنویس ها را به انگلیسی ترجمه کنید، کار را به عنوان "Translate" انتخاب کنید.
+     ###### توصیه می کنم از مدل پایه شروع کنید و سپس با مدل های بزرگتر آزمایش کنید، مدل های کوچک و متوسط اغلب به خوبی کار می کنند. """)
     
 
 def populate_metadata(link):
@@ -131,7 +131,7 @@ def generate_subtitled_video(video, audio, transcript):
     
 
 def main():
-    link = st.text_input("YouTube Link (The longer the video, the longer the processing time)", placeholder="Input YouTube link and press enter")
+    link = st.text_input("پیوند یوتیوب (هرچه ویدیو طولانی تر باشد، زمان پردازش بیشتر است)", placeholder="لینک یوتیوب را وارد کرده و enter را فشار دهید")
     task = st.selectbox("Select Task", ["Transcribe", "Translate"], index=0)
     if task == "Transcribe":
         if st.button("Transcribe"):
